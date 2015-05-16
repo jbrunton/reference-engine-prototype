@@ -1,0 +1,21 @@
+<div class="row">
+  <div class="large-12 columns">
+    <h3>Browse Category: <%= @category.name %></h3>
+
+    <% [@category].concat(@category.subcategories).each do |category| %>
+        <ul class="breadcrumbs">
+          <% category.ancestors.concat([category]).each do |cat| %>
+              <li class="<%= cat == @category ? 'current' : '' %>">
+                <%= link_to cat.short_name, :category => cat.name %>
+              </li>
+          <% end %>
+        </ul>
+
+        <ul class="square">
+          <% category.facts.each do |fact| %>
+              <li><strong>Fact:</strong> <%= link_to fact.summary, fact %></li>
+          <% end %>
+        </ul>
+    <% end %>
+  </div>
+</div>
