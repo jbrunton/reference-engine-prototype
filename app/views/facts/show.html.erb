@@ -2,14 +2,21 @@
   <div class="large-12 columns">
 
     <p>
-      <strong>Summary:</strong>
+      <strong>Fact:</strong>
       <%= @fact.summary %>
     </p>
 
-    <p>
-      <strong>References:</strong>
-      <%= @fact.references %>
-    </p>
+    <h3>References</h3>
+
+    <% @fact.reference_records.each do |reference| %>
+        <div>
+          <h5>
+            <%= link_to reference.title, reference %>
+            <%= link_to '[open]', reference.url, { class: 'external', target: '_blank' } %>
+          </h5>
+          <blockquote><%= reference.summary %></blockquote>
+        </div>
+    <% end %>
 
     <p>
       <strong>Categories:</strong>
