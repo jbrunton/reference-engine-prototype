@@ -14,8 +14,22 @@ Reference.create(
     url: 'http://www.economist.com/blogs/economist-explains/2014/07/economist-explains-15'
 )
 
+Reference.create(
+    key: 'Econ:ParentalLeave:2015',
+    title: 'More hands to rock the cradle',
+    summary: '“IN AMERICA there is nothing we wouldn’t do for moms—apart from one major thing,” said John Oliver, a British-born comedian, in his television show, “Last...',
+    author: 'The Economist',
+    url: 'http://www.economist.com/blogs/economist-explains/2014/07/economist-explains-15'
+)
+
 Fact.create(
-    summary: 'In Sweden, after introducing equal parental leave, only 0.4% of men took up the offer in the first year.',
+    summary: 'In Sweden, after introducing equal parental leave, only 0.5% of men took up the offer in the first year.',
     references: 'Econ:PaternityLeave:2014',
     categories: 'Evidence/SocialNorms'
+)
+
+Fact.create(
+    summary: 'Parental leave policies are more effective if they encourage responsibilities to be shared with an ‘equality bonus’ such as in Sweden',
+    references: 'Econ:PaternityLeave:2014, Econ:ParentalLeave:2015',
+    categories: 'EffectivePolicies/ParentalLeave'
 )
