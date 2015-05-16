@@ -16,8 +16,8 @@
         <% @facts.each do |fact| %>
             <tr>
               <td><%= fact.summary %></td>
-              <td><%= fact.references %></td>
-              <td><%= fact.categories %></td>
+              <td><%= fact.references_string %></td>
+              <td><%= fact.categories_string %></td>
               <td><%= link_to 'Show', fact %></td>
               <td><%= link_to 'Edit', edit_fact_path(fact) %></td>
               <td><%= link_to 'Destroy', fact, method: :delete, data: {confirm: 'Are you sure?'} %></td>

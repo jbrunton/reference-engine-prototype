@@ -8,7 +8,7 @@
 
     <h3>References</h3>
 
-    <% @fact.reference_records.each do |reference| %>
+    <% @fact.references.each do |reference| %>
         <div>
           <h5>
             <%= link_to reference.title, reference %>
@@ -18,10 +18,10 @@
         </div>
     <% end %>
 
-    <p>
-      <strong>Categories:</strong>
-      <%= @fact.categories %>
-    </p>
+    <h3>Categories</h3>
+    <% @fact.categories.each do |category| %>
+        <p><%= category.name %></p>
+    <% end %>
 
     <%= link_to 'Edit', edit_fact_path(@fact) %> |
     <%= link_to 'Back', facts_path %>

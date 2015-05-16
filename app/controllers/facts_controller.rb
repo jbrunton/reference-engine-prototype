@@ -42,6 +42,7 @@ class FactsController < ApplicationController
   def update
     respond_to do |format|
       if @fact.update(fact_params)
+        @fact.categorize()
         format.html { redirect_to @fact, notice: 'Fact was successfully updated.' }
         format.json { render :show, status: :ok, location: @fact }
       else
@@ -69,6 +70,14 @@ class FactsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def fact_params
-      params.require(:fact).permit(:summary, :reference_id, :categories)
+      params.require(:fact).permit(:summary)
+    end
+
+    def categories_param
+      params.require(:fact).permit(:categories)
+    end
+
+    def references_param
+      params.require(:fact).permit(:references)
     end
 end

@@ -24,12 +24,12 @@ Reference.create(
 
 Fact.create(
     summary: 'In Sweden, after introducing equal parental leave, only 0.5% of men took up the offer in the first year.',
-    references: 'Econ:PaternityLeave:2014',
-    categories: 'Evidence/SocialNorms'
+    references_string: 'Econ:PaternityLeave:2014',
+    categories_string: 'Evidence/SocialNorms'
 )
 
 Fact.create(
     summary: 'Parental leave policies are more effective if they encourage responsibilities to be shared with an ‘equality bonus’ such as in Sweden',
-    references: 'Econ:PaternityLeave:2014, Econ:ParentalLeave:2015',
-    categories: 'EffectivePolicies/ParentalLeave'
+    references_string: 'Econ:PaternityLeave:2014, Econ:ParentalLeave:2015',
+    categories_string: 'EffectivePolicies/ParentalLeave'
 )
