@@ -15,12 +15,12 @@ ActiveRecord::Schema.define(version: 20150516141246) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
-    t.integer  "category_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.integer  "parent_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
-  add_index "categories", ["category_id"], name: "index_categories_on_category_id"
+  add_index "categories", ["parent_id"], name: "index_categories_on_parent_id"
 
   create_table "categories_facts", id: false, force: :cascade do |t|
     t.integer "fact_id",     null: false

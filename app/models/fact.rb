@@ -6,14 +6,6 @@ class Fact < ActiveRecord::Base
   after_save :categorize
   after_save :reference
 
-  # def reference_keys
-  #   references.split(",").map(&:strip)
-  # end
-  #
-  # def reference_records
-  #   Reference.where(key: reference_keys)
-  # end
-
   def categorize
     categories.delete(*categories)
     categories_string.split(',').map(&:strip).each do |category_name|
