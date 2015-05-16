@@ -15,13 +15,11 @@ ActiveRecord::Schema.define(version: 20150516122655) do
 
   create_table "facts", force: :cascade do |t|
     t.string   "summary"
-    t.integer  "reference_id"
+    t.string   "references"
     t.string   "categories"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
-
-  add_index "facts", ["reference_id"], name: "index_facts_on_reference_id"
 
   create_table "references", force: :cascade do |t|
     t.string   "key"
