@@ -1,7 +1,13 @@
 <div class="row">
   <div class="large-12 columns">
     <% @categories.each do |category| %>
-        <p><%= category.name %></p>
+        <h5><%= category.name %></h5>
+
+        <ul class="square">
+          <% category.facts.each do |fact| %>
+              <li><strong>Fact:</strong> <%= link_to fact.summary, fact %></li>
+          <% end %>
+        </ul>
     <% end %>
   </div>
 </div>

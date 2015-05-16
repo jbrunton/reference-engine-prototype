@@ -23,7 +23,7 @@ Reference.create(
 )
 
 Fact.create(
-    summary: 'In Sweden, after introducing equal parental leave, only 0.5% of men took up the offer in the first year.',
+    summary: 'In Sweden, after introducing equal parental leave, only 0.5% of men took up the offer in the first year',
     references_string: 'Econ:PaternityLeave:2014',
     categories_string: 'Evidence/SocialNorms'
 )
@@ -32,4 +32,24 @@ Fact.create(
     summary: 'Parental leave policies are more effective if they encourage responsibilities to be shared with an ‘equality bonus’ such as in Sweden',
     references_string: 'Econ:PaternityLeave:2014, Econ:ParentalLeave:2015',
     categories_string: 'EffectivePolicies/ParentalLeave'
+)
+
+Reference.create(
+    key: 'Independent:IndiaMaritalRape:2015',
+    title: 'India refuses to criminalise marital rape because of ‘social issues and religious beliefs’ in country',
+    summary: 'Human rights campaigners have condemned the Indian government&#039;s refusal to criminalise marital rape by claiming cultural and religious issues mean it cannot be applied to India.',
+    author: 'The Independent',
+    url: 'http://www.independent.co.uk/news/world/asia/india-refuses-to-criminalise-marital-rape-because-of-social-issues-and-religious-beliefs-in-country-10216124.html'
+)
+
+Fact.create(
+    summary: 'A large number of countries fail to criminalize marital rape',
+    references_string: 'Independent:IndiaMaritalRape:2015',
+    categories_string: 'Evidence/DiscriminatoryPolicies'
+)
+
+Fact.create(
+    summary: 'In many countries, social norms fail to recognize marital rape as a problem',
+    references_string: 'Independent:IndiaMaritalRape:2015',
+    categories_string: 'Evidence/SocialNorms'
 )
