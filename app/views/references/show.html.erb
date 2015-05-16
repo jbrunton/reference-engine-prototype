@@ -1,29 +1,33 @@
-<p id="notice"><%= notice %></p>
+<div class="row">
+  <div class="large-12 columns">
+    <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Key:</strong>
-  <%= @reference.key %>
-</p>
+    <p>
+      <strong>Key:</strong>
+      <%= @reference.key %>
+    </p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @reference.title %>
-</p>
+    <p>
+      <strong>Title:</strong>
+      <%= @reference.title %>
+    </p>
 
-<p>
-  <strong>Author:</strong>
-  <%= @reference.author %>
-</p>
+    <p>
+      <strong>Author:</strong>
+      <%= @reference.author %>
+    </p>
 
-<p>
-  <strong>Url:</strong>
-  <%= @reference.url %>
-</p>
+    <p>
+      <strong>Url:</strong>
+      <%= @reference.url %>
+    </p>
 
-<p>
-  <strong>Summary:</strong>
-  <%= @reference.summary %>
-</p>
+    <p>
+      <strong>Summary:</strong>
+      <%= @reference.summary %>
+    </p>
 
-<%= link_to 'Edit', edit_reference_path(@reference) %> |
-<%= link_to 'Back', references_path %>
+    <%= link_to 'Edit', edit_reference_path(@reference) %> |
+    <%= link_to 'Back', references_path %>
+  </div>
+</div>
