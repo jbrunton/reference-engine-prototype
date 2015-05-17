@@ -2,6 +2,7 @@ class CreateFacts < ActiveRecord::Migration
   def change
     create_table :facts do |t|
       t.string :summary
+      t.string :content
       t.string :references_string
       t.string :categories_string
 

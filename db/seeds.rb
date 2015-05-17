@@ -87,7 +87,7 @@ Reference.create(
     url: 'http://progress.unwomen.org/en/2015/pdf/UNW_progressreport.pdf'
 )
 
-summary = <<-END
+content = <<-END
   From UN Women Progress Report:
 
   > The translation of equality before the law into equal outcomes is not automatic. Even where gender-equal laws have been put into place, entrenched inequalities, discriminatory social norms, harmful customary practices, as well as dominant patterns of economic development can undermine their implementation and positive impact.
@@ -98,7 +98,8 @@ summary = <<-END
 END
 
 Fact.create(
-    summary: summary,
+    summary: 'Substantive laws require states to overcome entrenched inequalities in order to protext and fulful women’s rights',
+    content: content,
     references_string: 'UNWomen:Progress:2015',
     categories_string: 'EffectivePolicies/InternationalLaw'
 )

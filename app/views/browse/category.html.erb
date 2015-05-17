@@ -14,8 +14,7 @@
         <ul class="square">
           <% category.facts.each do |fact| %>
               <li>
-                <%= markdownify_fact(fact) %>
-                <p><%= link_to '[Read in full]', fact %></p>
+                <%= link_to fact.summary, fact %>
               </li>
           <% end %>
         </ul>

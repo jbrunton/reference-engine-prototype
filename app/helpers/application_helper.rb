@@ -8,8 +8,4 @@ module ApplicationHelper
         :hard_wrap => true)
     markdown.render(text).html_safe
   end
-
-  def markdownify_fact(fact)
-    markdownify("<strong>Fact:</strong> #{fact.summary}")
-  end
 end
