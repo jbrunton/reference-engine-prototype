@@ -5,7 +5,10 @@
 
         <ul class="square">
           <% category.facts.each do |fact| %>
-              <li><strong>Fact:</strong> <%= link_to fact.summary, fact %></li>
+              <li>
+                <%= markdownify_fact(fact) %>
+                <p><%= link_to '[Read in full]', fact %></p>
+              </li>
           <% end %>
         </ul>
     <% end %>

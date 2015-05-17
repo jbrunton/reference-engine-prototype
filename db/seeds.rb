@@ -87,8 +87,18 @@ Reference.create(
     url: 'http://progress.unwomen.org/en/2015/pdf/UNW_progressreport.pdf'
 )
 
+summary = <<-END
+  From UN Women Progress Report:
+
+  > The translation of equality before the law into equal outcomes is not automatic. Even where gender-equal laws have been put into place, entrenched inequalities, discriminatory social norms, harmful customary practices, as well as dominant patterns of economic development can undermine their implementation and positive impact.
+
+  Substantive laws such as the Convention on the Elimination of All Forms of Discrimination against Women (CEDAW) and the International Covenant on Economic, Social and Cultural Rights (ICESCR):
+
+  > are legally binding commitments that require States to respect, protect and fulfil women’s rights.
+END
+
 Fact.create(
-    summary: '<p>“The translation of equality before the law into equal outcomes is not automatic. Even where gender-equal laws have been put into place, entrenched inequalities, discriminatory social norms, harmful customary practices, as well as dominant patterns of economic development can undermine their implementation and positive impact.”</p><p>Substantive laws such as the Convention on the Elimination of All Forms of Discrimination against Women (CEDAW) and the International Covenant on Economic, Social and Cultural Rights (ICESCR) “are legally binding commitments that require States to respect, protect and fulfil women’s rights.”',
+    summary: summary,
     references_string: 'UNWomen:Progress:2015',
     categories_string: 'EffectivePolicies/InternationalLaw'
 )

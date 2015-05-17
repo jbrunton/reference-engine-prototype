@@ -1,10 +1,7 @@
 <div class="row">
   <div class="large-12 columns">
 
-    <p>
-      <strong>Fact:</strong>
-      <%= @fact.summary %>
-    </p>
+    <%= markdownify_fact(@fact) %>
 
     <h3>References</h3>
 
