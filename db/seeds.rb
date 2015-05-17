@@ -53,3 +53,29 @@ Fact.create(
     references_string: 'Independent:IndiaMaritalRape:2015',
     categories_string: 'Evidence/SocialNorms'
 )
+
+Reference.create(
+    key: 'LessWrong:EfficientCharity:2010',
+    title: 'Efficient Charity',
+    summary: 'The Overhead Ratio: Not a Good Metric',
+    url: 'http://lesswrong.com/lw/37f/efficient_charity/'
+)
+
+Fact.create(
+    summary: 'The overhead ratio is not a good metric for selecting charities',
+    references_string: 'LessWrong:EfficientCharity:2010',
+    categories_string: 'Impact/CharitableGiving'
+)
+
+Reference.create(
+    key: 'GFW:TrustInWomen',
+    title: 'Trust In Women: Give General Support',
+    summary: 'Not all grants are created equal. At the Global Fund for Women, we believe that the way you grant can have as much of an impact as the grant itself.',
+    url: 'http://www.globalfundforwomen.org/storage/documents/where-we-stand/gfw_gensupport.pdf'
+)
+
+Fact.create(
+    summary: 'General support grants are essential for charitable organisations to work effectively',
+    references_string: 'GFW:TrustInWomen',
+    categories_string: 'Impact/CharitableGiving'
+)
