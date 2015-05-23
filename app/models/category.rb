@@ -28,4 +28,9 @@ class Category < ActiveRecord::Base
   def subcategories
     Category.where("name LIKE :category", category: "#{name}/%")
   end
+
+  def related_categories
+    Category.where(parent: parent).
+            select{ |category| category != self }
+  end
 end
