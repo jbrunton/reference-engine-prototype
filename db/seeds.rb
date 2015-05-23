@@ -98,7 +98,7 @@ content = <<-END
 END
 
 Fact.create(
-    summary: 'Substantive laws require states to overcome entrenched inequalities in order to protext and fulful women’s rights',
+    summary: 'Substantive laws require states to overcome entrenched inequalities in order to protect and fulfil women’s rights',
     content: content,
     references_string: 'UNWomen:Progress:2015',
     categories_string: 'EffectivePolicies/InternationalLaw'

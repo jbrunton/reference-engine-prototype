@@ -3,9 +3,10 @@ Rails.application.routes.draw do
 
   resources :facts
   resources :references
-  resources :categories
+  # resources :categories
 
   get 'browse/category/*category', to: 'browse#category'
+  get 'categories/*category', to: 'categories#show'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
