@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150516141246) do
+ActiveRecord::Schema.define(version: 20150524134812) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -32,8 +32,9 @@ ActiveRecord::Schema.define(version: 20150516141246) do
     t.text     "content"
     t.string   "references_string"
     t.string   "categories_string"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
+    t.string   "version_description"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
   end
 
   create_table "facts_references", id: false, force: :cascade do |t|
@@ -50,5 +51,16 @@ ActiveRecord::Schema.define(version: 20150516141246) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "versions", force: :cascade do |t|
+    t.string   "item_type",  null: false
+    t.integer  "item_id",    null: false
+    t.string   "event",      null: false
+    t.string   "whodunnit"
+    t.text     "object"
+    t.datetime "created_at"
+  end
+
+  add_index "versions", ["item_type", "item_id"], name: "index_versions_on_item_type_and_item_id"
 
 end

@@ -1,7 +1,13 @@
 Rails.application.routes.draw do
   root 'home#index'
 
-  resources :facts
+  resources :facts do
+    resources :versions, shallow: true do
+      member do
+        post :restore
+      end
+    end
+  end
   resources :references
   # resources :categories
 

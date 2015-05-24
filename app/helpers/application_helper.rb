@@ -12,4 +12,8 @@ module ApplicationHelper
   def format_date(date)
     date.strftime('%-d %b %Y').html_safe
   end
+
+  def format_time(date)
+    date.strftime('%-d %b %Y %H:%M:%S').html_safe
+  end
 end

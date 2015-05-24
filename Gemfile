@@ -49,3 +49,4 @@ end
 
 gem 'foundation-rails'
 gem 'redcarpet'
+gem 'paper_trail'

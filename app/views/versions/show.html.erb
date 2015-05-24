@@ -1,0 +1,14 @@
+<div class="row">
+  <div class="large-12 columns">
+    <p>Viewing version <%= @version.id %>. View the latest version <%= link_to 'here', @fact %>.</p>
+  </div>
+  <div class="large-8 columns">
+    <%= render 'facts/show' %>
+  </div>
+
+  <div class="large-4 columns">
+    <%= form_tag(restore_version_path(@version)) do %>
+        <%= submit_tag 'Restore', :class => 'small button radius' %>
+    <% end %>
+  </div>
+</div>

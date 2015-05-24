@@ -1,5 +1,5 @@
 class FactsController < ApplicationController
-  before_action :set_fact, only: [:show, :edit, :update, :destroy]
+  before_action :set_fact, only: [:show, :edit, :update, :destroy, :versions, :restore_version]
 
   # GET /facts
   # GET /facts.json
@@ -70,7 +70,7 @@ class FactsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def fact_params
-      params.require(:fact).permit(:summary)
+      params.require(:fact).permit(:summary, :content, :version_description)
     end
 
     def categories_param

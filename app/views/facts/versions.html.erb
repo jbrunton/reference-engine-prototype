@@ -1,0 +1,13 @@
+<div class="row">
+  <div class="large-8 columns">
+    <h3>Versions</h3>
+    <table>
+      <% @fact.versions.each do |v| %>
+        <tr>
+          <td><%= format_time v.created_at %></td>
+          <td><%= link_to 'Restore', restore_version_fact_path %></td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

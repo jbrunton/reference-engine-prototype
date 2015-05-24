@@ -3,6 +3,8 @@
     <div class="clearfix right">
       <span>Last updated <%= format_date @fact.updated_at %></span>
       &middot;
+      <%= link_to 'Versions', fact_versions_path(@fact) %>
+      &middot;
       <%= link_to 'Edit', edit_fact_path(@fact) %>
     </div>
   </div>
