@@ -1,9 +1,13 @@
 <ul class="square">
   <% categories.each do |category| %>
       <li>
-        <%= link_to category.short_name, "/categories/#{category.name}" %>
+        <% if category == selected %>
+            <strong><%= category.short_name %></strong>
+        <% else %>
+            <%= link_to category.short_name, "/categories/#{category.name}" %>
+        <% end %>
 
-        <%= render partial: 'categories/tree', locals: { categories: category.subcategories } %>
+        <%= render partial: 'categories/tree', locals: { categories: category.subcategories, selected: selected } %>
       </li>
   <% end %>
 </ul>

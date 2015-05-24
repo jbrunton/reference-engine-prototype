@@ -10,6 +10,7 @@ class ReferencesController < ApplicationController
   # GET /references/1
   # GET /references/1.json
   def show
+    @citations = @reference.facts
   end
 
   # GET /references/new

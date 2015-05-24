@@ -1,33 +1,30 @@
 <div class="row">
-  <div class="large-12 columns">
+  <div class="large-8 columns">
     <p id="notice"><%= notice %></p>
+
+    <h3><%= @reference.title %></h3>
+
+    <p><%= @reference.summary %></p>
 
     <p>
       <strong>Key:</strong>
       <%= @reference.key %>
     </p>
 
-    <p>
-      <strong>Title:</strong>
-      <%= @reference.title %>
+    <p style="word-wrap:break-word;">
+      <%= link_to @reference.url %>
     </p>
-
-    <p>
-      <strong>Author:</strong>
-      <%= @reference.author %>
-    </p>
-
-    <p>
-      <strong>Url:</strong>
-      <%= @reference.url %>
-    </p>
-
-    <p>
-      <strong>Summary:</strong>
-      <%= @reference.summary %>
-    </p>
-
-    <%= link_to 'Edit', edit_reference_path(@reference) %> |
-    <%= link_to 'Back', references_path %>
+  </div>
+  <div class="large-4 columns" %>
+    <div class="panel">
+      <h3>Citations</h3>
+      <ul class="square">
+        <% @citations.each do |fact| %>
+            <li>
+              <strong>Fact:</strong> <%= link_to fact.summary, fact %>
+            </li>
+        <% end %>
+      </ul>
+    </div>
   </div>
 </div>

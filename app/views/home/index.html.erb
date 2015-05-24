@@ -14,7 +14,8 @@
   </div>
   <div class="large-4 columns">
     <div class="panel">
-      <%= render partial: 'categories/tree', locals: { categories: @root_categories } %>
+      <h4>Categories</h4>
+      <%= render partial: 'categories/tree', locals: { categories: @root_categories, selected: @selected_category } %>
     </div>
   </div>
 </div>
