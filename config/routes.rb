@@ -1,12 +1,14 @@
 Rails.application.routes.draw do
   root 'home#index'
 
-  resources :facts
-  resources :references
-  # resources :categories
+  resources :wikis, path: '' do
+    resources :facts
+    resources :references
+    # resources :categories
 
-  get 'browse/category/*category', to: 'browse#category'
-  get 'categories/*category', to: 'categories#show'
+    get 'browse/category/*category', to: 'browse#category'
+    get 'categories/*category', to: 'categories#show'
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
