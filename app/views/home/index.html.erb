@@ -1,7 +1,7 @@
 <div class="row">
   <div class="large-8 columns">
     <div class="panel callout">
-      <h3>Highlighted category: <%= @selected_category.name %></h3>
+      <h3>Highlighted category: <%= @selected_category.short_name %></h3>
       <ul class="square">
         <% @selected_category.facts.each do |fact| %>
             <li>
