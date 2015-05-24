@@ -1,6 +1,6 @@
 <div class="row">
   <div class="large-12 columns">
-    <h3>Category: <%= @category.name %></h3>
+    <h3>Category: <%= @category.short_name %></h3>
     <ul class="breadcrumbs">
       <% @category.ancestors.concat([@category]).each do |cat| %>
           <li class="<%= cat == @category ? 'current' : '' %>">
@@ -24,15 +24,15 @@
   <div class="large-4 columns">
     <div class="panel">
       <h4>Subcategories</h4>
-      <% @category.subcategories.each do |category| %>
-          <%= link_to category.name, "/categories/#{category.name}" %>
-      <% end %>
+      <%= render partial: 'categories/tree', locals: { categories: @category.subcategories } %>
     </div>
     <div class="panel">
       <h4>Related Categories</h4>
-      <% @category.related_categories.each do |category| %>
-          <%= link_to category.name, "/categories/#{category.name}" %>
-      <% end %>
+      <ul class="square">
+        <% @category.related_categories.each do |category| %>
+            <li><%= link_to category.short_name, "/categories/#{category.name}" %></li>
+        <% end %>
+      </ul>
     </div>
   </div>
 </div>

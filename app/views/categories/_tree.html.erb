@@ -1,0 +1,9 @@
+<ul class="square">
+  <% categories.each do |category| %>
+      <li>
+        <%= link_to category.short_name, "/categories/#{category.name}" %>
+
+        <%= render partial: 'categories/tree', locals: { categories: category.subcategories } %>
+      </li>
+  <% end %>
+</ul>
