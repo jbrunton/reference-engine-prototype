@@ -17,7 +17,7 @@
         <ul class="square">
           <% @category.facts.each do |fact| %>
               <li>
-                <strong>Fact:</strong> <%= link_to fact.summary, fact %>
+                <strong>Fact:</strong> <%= link_to fact.summary, wiki_fact_path(@wiki, fact) %>
               </li>
           <% end %>
         </ul>

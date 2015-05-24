@@ -1,5 +1,6 @@
 class Category < ActiveRecord::Base
   belongs_to :category
+  belongs_to :wiki
   belongs_to :parent, class_name: "Category"
   has_and_belongs_to_many :facts
 

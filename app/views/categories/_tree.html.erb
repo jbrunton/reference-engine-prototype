@@ -4,7 +4,7 @@
         <% if category == selected %>
             <strong><%= category.short_name %></strong>
         <% else %>
-            <%= link_to category.short_name, "/categories/#{category.name}" %>
+            <%= link_to category.short_name, "/wikis/#{@wiki.id}/categories/#{category.name}" %>
         <% end %>
 
         <%= render partial: 'categories/tree', locals: { categories: category.subcategories, selected: selected } %>

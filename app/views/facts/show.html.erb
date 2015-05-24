@@ -12,21 +12,19 @@
     <% @fact.references.each do |reference| %>
         <div class="panel">
           <h5>
-            <%= link_to reference.title, reference %>
+            <%= link_to reference.title, wiki_reference_path(@wiki, reference) %>
             <%= link_to '[open]', reference.url, { class: 'external', target: '_blank' } %>
           </h5>
           <%= reference.summary %>
         </div>
     <% end %>
 
-    <%= link_to 'Edit', edit_fact_path(@fact) %> |
-    <%= link_to 'Back', facts_path %>
   </div>
   <div class="large-4 columns">
     <div class="panel">
       <h4>Categories</h4>
       <% @fact.categories.each do |category| %>
-          <%= link_to category.name, "/categories/#{category.name}" %>
+          <%= link_to category.name, "/wikis/#{@wiki.id}/categories/#{category.name}" %>
       <% end %>
     </div>
   </div>

@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
-  root 'home#index'
-
-  resources :wikis, path: '' do
+  resources :wikis do
     resources :facts
     resources :references
     # resources :categories
