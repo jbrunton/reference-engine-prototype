@@ -1,8 +1,17 @@
 <div class="row">
+  <div class="large-12 columns">
+    <div class="clearfix right">
+      <span>Last updated <%= format_date @fact.updated_at %></span>
+      &middot;
+      <%= link_to 'Edit', edit_fact_path(@fact) %>
+    </div>
+  </div>
   <div class="large-8 columns">
 
     <div class="panel callout">
-      <h5><strong>Fact:</strong> <%= @fact.summary %></h5>
+      <h5>
+        <strong>Fact:</strong> <%= @fact.summary %>
+      </h5>
     </div>
 
     <%= markdownify(@fact.content) %>
@@ -19,8 +28,6 @@
         </div>
     <% end %>
 
-    <%= link_to 'Edit', edit_fact_path(@fact) %> |
-    <%= link_to 'Back', facts_path %>
   </div>
   <div class="large-4 columns">
     <div class="panel">

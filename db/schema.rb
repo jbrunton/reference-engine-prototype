@@ -28,8 +28,8 @@ ActiveRecord::Schema.define(version: 20150516141246) do
   end
 
   create_table "facts", force: :cascade do |t|
-    t.string   "summary"
-    t.string   "content"
+    t.text     "summary"
+    t.text     "content"
     t.string   "references_string"
     t.string   "categories_string"
     t.datetime "created_at",        null: false
