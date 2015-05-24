@@ -7,6 +7,7 @@
         <td><%= format_time @fact.updated_at %></td>
         <td><%= @fact.version_description %></td>
         <td><%= link_to 'View', @fact %></td>
+        <td></td>
       </tr>
       <% @versions.each do |v| %>
           <tr>
@@ -14,6 +15,7 @@
             <td><%= format_time v.created_at %></td>
             <td><%= v.reify.version_description %></td>
             <td><%= link_to 'View', version_path(v) %></td>
+            <td><%= link_to 'Diff', diff_version_path(v, @fact) %> </td>
           </tr>
       <% end %>
     </table>

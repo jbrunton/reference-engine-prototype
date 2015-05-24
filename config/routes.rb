@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     resources :versions, shallow: true do
       member do
         post :restore
+        get 'diff/:fact_id', to: :diff, as: :diff
       end
     end
   end
