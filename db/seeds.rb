@@ -34,6 +34,18 @@ Fact.create(
     categories_string: 'EffectivePolicies/ParentalLeave'
 )
 
+Fact.create(
+    summary: 'Many countries fail to offer paid paternity leave',
+    references_string: 'Econ:ParentalLeave:2015',
+    categories_string: 'Evidence/DiscriminatoryPolicies'
+)
+
+Fact.create(
+    summary: 'Paid maternity leave increases workforce participation',
+    references_string: 'Econ:ParentalLeave:2015',
+    categories_string: 'EffectivePolicies/ParentalLeave'
+)
+
 Reference.create(
     key: 'Independent:IndiaMaritalRape:2015',
     title: 'India refuses to criminalise marital rape because of ‘social issues and religious beliefs’ in country',
@@ -102,4 +114,30 @@ Fact.create(
     content: content,
     references_string: 'UNWomen:Progress:2015',
     categories_string: 'EffectivePolicies/InternationalLaw'
+)
+
+Reference.create(
+    key: 'Guardian:HunterGathererTribes:2015',
+    title: 'Early men and women were equal, say scientists',
+    summary: 'Study shows that modern hunter-gatherer tribes operate on egalitarian basis, suggesting inequality was an aberration that came with the advent of agriculture',
+    url: 'http://www.theguardian.com/science/2015/may/14/early-men-women-equal-scientists'
+)
+
+Fact.create(
+    summary: 'Study shows that modern hunter-gatherer tribes operate on egalitarian basis, suggesting inequality was an aberration that came with the advent of agriculture',
+    references_string: 'Guardian:HunterGathererTribes:2015',
+    categories_string: 'Evidence/SocialNorms'
+)
+
+Reference.create(
+    key: 'NPR:EmpowermentBasedSexEd:2015',
+    title: 'Sex Ed Works Better When It Addresses Power In Relationships',
+    summary: '‘Empowerment based’ sex ed programs that address the social and biological aspects of puberty and sex are more effective than traditional programs',
+    url: 'http://www.npr.org/sections/health-shots/2015/05/17/407063066/sex-ed-works-better-when-it-addresses-power-in-relationships'
+)
+
+Fact.create(
+    summary: 'A study of sex ed programs found that ‘empowerment based’ programs which address harmful gender norms were more effective at reducing pregnancies and STDs than traditional ones',
+    references_string: 'NPR:EmpowermentBasedSexEd:2015',
+    categories_string: 'EffectiveProgrammes/Education'
 )
