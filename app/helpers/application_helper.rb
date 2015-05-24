@@ -8,4 +8,8 @@ module ApplicationHelper
         :hard_wrap => true)
     markdown.render(text).html_safe
   end
+
+  def format_date(date)
+    date.strftime('%-d %b %Y').html_safe
+  end
 end
