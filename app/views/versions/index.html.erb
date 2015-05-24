@@ -1,9 +1,16 @@
 <div class="row">
   <div class="large-8 columns">
     <h3>Versions</h3>
-    <table>
+    <table style="width: 100%;">
+      <tr>
+        <td>CURRENT</td>
+        <td><%= format_time @fact.updated_at %></td>
+        <td><%= @fact.version_description %></td>
+        <td><%= link_to 'View', @fact %></td>
+      </tr>
       <% @versions.each do |v| %>
           <tr>
+            <td><%= v.id %></td>
             <td><%= format_time v.created_at %></td>
             <td><%= v.reify.version_description %></td>
             <td><%= link_to 'View', version_path(v) %></td>
