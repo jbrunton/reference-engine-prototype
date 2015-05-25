@@ -1,0 +1,30 @@
+<div class="row">
+  <div class="large-12 columns">
+    <p>
+      Diffing <%= link_to "v#{@version1.id}", version_path(@version1) %> with
+      <% if @version2.nil? %>
+        <%= link_to 'CURRENT', @resource2 %>.
+      <% else %>
+        <%= link_to "v#{@version2.id}", version_path(@version2) %>.
+      <% end %>
+  </div>
+  <div class="large-8 columns">
+    <% unless @title_diff.nil? %>
+        <h3>Title</h3>
+        <%= @title_diff %>
+    <% end %>
+
+    <% unless @summary_diff.nil? %>
+        <h3>Summary</h3>
+        <%= @summary_diff %>
+    <% end %>
+
+    <% unless @content_diff.nil? %>
+        <h3>Content</h3>
+        <%= @content_diff %>
+    <% end %>
+  </div>
+  <div class="large-4 columns">
+
+  </div>
+</div>

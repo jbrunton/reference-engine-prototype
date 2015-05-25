@@ -1,0 +1,19 @@
+<div class="panel callout">
+  <h5>
+    <strong>Fact:</strong> <%= @fact.summary %>
+  </h5>
+</div>
+
+<%= markdownify(@fact.content) %>
+
+<h4>References</h4>
+
+<% @fact.references.each do |reference| %>
+    <div class="panel">
+      <h5>
+        <%= link_to reference.title, reference %>
+        <%= link_to '[open]', reference.url, { class: 'external', target: '_blank' } %>
+      </h5>
+      <%= reference.summary %>
+    </div>
+<% end %>

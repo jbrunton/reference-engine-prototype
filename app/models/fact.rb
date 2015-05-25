@@ -1,4 +1,6 @@
 class Fact < ActiveRecord::Base
+  has_paper_trail
+
   belongs_to :reference
   has_and_belongs_to_many :categories
   has_and_belongs_to_many :references

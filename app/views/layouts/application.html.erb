@@ -6,6 +6,10 @@
 
     <title><%= content_for?(:title) ? yield(:title) : "Gender Inequality" %></title>
 
+    <style>
+        <%= Diffy::CSS %>
+    </style>
+
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "vendor/modernizr" %>
     <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>

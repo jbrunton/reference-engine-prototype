@@ -27,6 +27,10 @@
       <%= f.label :categories %><br>
       <%= f.text_field :categories_string %>
     </div>
+    <div class="field">
+      <%= f.label :version_description %><br>
+      <%= f.text_field :version_description %>
+    </div>
     <div class="actions">
       <% unless @fact.new_record? %>
           <%= link_to 'Cancel', @fact, :class => 'small radius cancel button' %>
