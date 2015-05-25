@@ -1,9 +1,14 @@
 <div class="row">
   <div class="large-12 columns">
-    <p>Viewing version <%= @version.id %>. View the latest version <%= link_to 'here', @fact %>.</p>
+    <p>Viewing version <%= @version.id %>. View the latest version <%= link_to 'here', @resource %>.</p>
   </div>
   <div class="large-8 columns">
-    <%= render 'facts/show' %>
+    <% if @version.item_type == 'Fact' %>
+        <%= render 'facts/show' %>
+    <% end %>
+    <% if @version.item_type == 'Reference' %>
+        <%= render 'references/show' %>
+    <% end %>
   </div>
 
   <div class="large-4 columns">

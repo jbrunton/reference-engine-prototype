@@ -70,6 +70,6 @@ class ReferencesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def reference_params
-      params.require(:reference).permit(:key, :title, :author, :url, :summary)
+      params.require(:reference).permit(:key, :title, :author, :url, :summary, :version_description)
     end
 end

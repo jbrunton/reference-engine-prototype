@@ -48,8 +48,9 @@ ActiveRecord::Schema.define(version: 20150524134812) do
     t.string   "author"
     t.string   "url"
     t.string   "summary"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "version_description"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
   end
 
   create_table "versions", force: :cascade do |t|

@@ -1,7 +1,7 @@
 class VersionsController < ApplicationController
+  before_action :set_resource, only: [:index]
   def index
-    @fact = Fact.find(params[:fact_id])
-    @versions = @fact.versions.
+    @versions = @resource.versions.
         select{ |v| v.event != 'create' }.
         sort_by{ |v| v.created_at }.
         reverse
@@ -9,29 +9,38 @@ class VersionsController < ApplicationController
 
   def show
     @version = PaperTrail::Version.find(params[:id])
-    @fact = @version.reify
+    @resource = @version.reify
+    @fact = @resource if @version.item_type == 'Fact'
+    @reference = @resource if @version.item_type == 'Reference'
   end
 
   def restore
-    @version = PaperTrail::Version.find(params[:id])
-    @fact = @version.reify
-    @fact.version_description = "Restored v#{@version.id}"
-    @fact.save
-    redirect_to @fact
+    version = PaperTrail::Version.find(params[:id])
+    resource = version.reify
+    resource.version_description = "Restored v#{resource.id}"
+    resource.save
+    redirect_to resource
   end
 
   def diff
     @version1 = PaperTrail::Version.find(params[:id])
-    @fact1 = @version1.reify
+    @resource1 = @version1.reify
 
     if params[:v2] == 'CURRENT'
-      @fact2 = Fact.find(@fact1.id)
+      @resource2 = @resource1.class.find(@resource1.id)
     else
       @version2 = PaperTrail::Version.find(params[:v2])
-      @fact2 = @version2.reify
+      @resource2 = @version2.reify
     end
 
-    @summary_diff = Diffy::Diff.new(@fact1.summary, @fact2.summary).to_s(:html).html_safe
-    @content_diff = Diffy::Diff.new(@fact1.content, @fact2.content).to_s(:html).html_safe
+    @title_diff = Diffy::Diff.new(@resource1.title, @resource2.title).to_s(:html).html_safe if @resource1.respond_to?(:title)
+    @summary_diff = Diffy::Diff.new(@resource1.summary, @resource2.summary).to_s(:html).html_safe if @resource1.respond_to?(:summary)
+    @content_diff = Diffy::Diff.new(@resource1.content, @resource2.content).to_s(:html).html_safe if @resource1.respond_to?(:content)
+  end
+
+private
+  def set_resource
+    @resource = Fact.find(params[:fact_id]) if params[:fact_id]
+    @resource = Reference.find(params[:reference_id]) if params[:reference_id]
   end
 end

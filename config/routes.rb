@@ -2,15 +2,18 @@ Rails.application.routes.draw do
   root 'home#index'
 
   resources :facts do
-    resources :versions, shallow: true do
-      member do
-        post :restore
-        get 'diff/:v2', to: :diff, as: :diff
-      end
+    resources :versions, only: [:index]
+  end
+  resources :references do
+    resources :versions, only: [:index]
+  end
+
+  resources :versions, only: [:show] do
+    member do
+      post :restore
+      get 'diff/:v2', to: :diff, as: :diff
     end
   end
-  resources :references
-  # resources :categories
 
   get 'browse/category/*category', to: 'browse#category'
   get 'categories/*category', to: 'categories#show'
