@@ -1,23 +1,54 @@
+<script>
+    var version1, version2, diffButton;
+
+    function diff() {
+        var url = '/versions/' + version1 + '/diff/' + version2;
+        window.location = url;
+    }
+
+    function validate() {
+        if ($('input[name=version]:checked').length == 2) {
+            diffButton.show();
+        } else {
+            diffButton.hide();
+        }
+    }
+
+    function versionChecked() {
+        version1 = $('input[name=version]:checked:last').val(),
+                version2 = $('input[name=version]:checked:first').val();
+        validate();
+    }
+
+    $(function() {
+        diffButton = $('#diff');
+        diffButton.hide();
+        diffButton.click(diff);
+        $('input[name=version]').change(versionChecked);
+    });
+</script>
+
 <div class="row">
   <div class="large-8 columns">
     <h3>Versions</h3>
     <table style="width: 100%;">
       <tr>
+        <td><input type="checkbox" name="version" value="CURRENT" /></td>
         <td>CURRENT</td>
         <td><%= format_time @fact.updated_at %></td>
         <td><%= @fact.version_description %></td>
         <td><%= link_to 'View', @fact %></td>
-        <td></td>
       </tr>
       <% @versions.each do |v| %>
           <tr>
+            <td><input type="checkbox" name="version" value="<%= v.id %>" /></td>
             <td><%= v.id %></td>
             <td><%= format_time v.created_at %></td>
             <td><%= v.reify.version_description %></td>
             <td><%= link_to 'View', version_path(v) %></td>
-            <td><%= link_to 'Diff', diff_version_path(v, @fact) %> </td>
           </tr>
       <% end %>
     </table>
+    <input type="button" id='diff' class="small button radius" href="#" value="Diff" />
   </div>
 </div>
