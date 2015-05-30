@@ -7,4 +7,7 @@ class HomeController < ApplicationController
 
     @root_categories = categories.select{ |cat| cat.parent.nil? }
   end
+
+  def about
+  end
 end
