@@ -1,40 +1,10 @@
 <%= form_for(@reference) do |f| %>
-    <% if @reference.errors.any? %>
-        <div id="error_explanation">
-          <h2><%= pluralize(@reference.errors.count, "error") %> prohibited this reference from being saved:</h2>
-
-          <ul>
-            <% @reference.errors.full_messages.each do |message| %>
-                <li><%= message %></li>
-            <% end %>
-          </ul>
-        </div>
-    <% end %>
-
-    <div class="field">
-      <%= f.label :key %><br>
-      <%= f.text_field :key %>
-    </div>
-    <div class="field">
-      <%= f.label :title %><br>
-      <%= f.text_field :title %>
-    </div>
-    <div class="field">
-      <%= f.label :author %><br>
-      <%= f.text_field :author %>
-    </div>
-    <div class="field">
-      <%= f.label :url %><br>
-      <%= f.text_field :url %>
-    </div>
-    <div class="field">
-      <%= f.label :summary %><br>
-      <%= f.text_field :summary %>
-    </div>
-    <div class="field">
-      <%= f.label :version_description %><br>
-      <%= f.text_field :version_description %>
-    </div>
+    <%= f.text_field :key %>
+    <%= f.text_field :title %>
+    <%= f.text_field :author %>
+    <%= f.text_field :url %>
+    <%= f.text_area :summary %>
+    <%= f.text_area :version_description %>
     <div class="actions">
       <% unless @reference.new_record? %>
           <%= link_to 'Cancel', @reference, :class => 'small radius cancel button' %>

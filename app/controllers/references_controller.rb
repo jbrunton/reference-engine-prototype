@@ -20,6 +20,7 @@ class ReferencesController < ApplicationController
 
   # GET /references/1/edit
   def edit
+    @reference.version_description = nil
   end
 
   # POST /references
