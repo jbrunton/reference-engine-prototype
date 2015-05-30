@@ -4,16 +4,16 @@
 
     <table>
       <tr>
-        <th>Version</th>
-        <th>Page Type</th>
+        <th>Type</th>
+        <th>Title</th>
         <th>Version Description</th>
         <th></th>
       </tr>
       <% @versions.each do |v| %>
           <% reified_version = v.reify %>
           <tr>
-            <td><%= "v#{reified_version.version_number}" %></td>
             <td><%= v.item_type %></td>
+            <td><%= reified_version.title %></td>
             <td><%= reified_version.version_description %></td>
             <td><%= link_to 'View', version_path(v) %></td>
           </tr>

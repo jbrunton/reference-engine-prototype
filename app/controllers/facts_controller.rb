@@ -62,7 +62,7 @@ class FactsController < ApplicationController
     def set_fact
       @fact = Fact.find(params[:id])
     rescue ActiveRecord::RecordNotFound
-      version = PaperTrail::Version.where(event: 'destroy', item_id: params[:id]).first
+      version = PaperTrail::Version.where(event: 'destroy', item_type: 'Fact', item_id: params[:id]).first
       if version
         version_link = view_context.link_to("here", version_path(version))
         redirect_to root_url, notice: "Page was deleted. View the last version #{version_link}."

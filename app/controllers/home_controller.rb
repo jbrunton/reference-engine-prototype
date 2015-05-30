@@ -12,7 +12,12 @@ class HomeController < ApplicationController
   end
 
   def trash
-    active_item_ids = Fact.select('id').distinct.pluck(:id) + Reference.select('id').distinct.pluck(:id)
-    @versions = PaperTrail::Version.where("item_id NOT IN (?)", active_item_ids).group('"item_id", "item_type"').having('id = MAX(id)')
+    active_fact_ids = Fact.select('id').distinct.pluck(:id)
+    fact_versions = PaperTrail::Version.where("item_type = 'Fact' AND item_id NOT IN (?)", active_fact_ids).group('"item_id"').having('id = MAX(id)')
+
+    active_reference_ids = Reference.select('id').distinct.pluck(:id)
+    reference_versions = PaperTrail::Version.where("item_type = 'Reference' AND item_id NOT IN (?)", active_reference_ids).group('"item_id"').having('id = MAX(id)')
+
+    @versions = fact_versions + reference_versions
   end
 end

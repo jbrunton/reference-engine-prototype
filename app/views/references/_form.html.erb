@@ -1,9 +1,9 @@
 <%= form_for(@reference) do |f| %>
-    <%= f.text_field :key %>
     <%= f.text_field :title %>
+    <%= f.text_area :content, class: 'large' %>
+    <%= f.text_field :key %>
     <%= f.text_field :author %>
     <%= f.text_field :url %>
-    <%= f.text_area :summary %>
     <%= f.text_area :version_description %>
     <div class="actions">
       <% unless @reference.new_record? %>

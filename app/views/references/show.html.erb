@@ -19,7 +19,7 @@
       <ul class="square">
         <% @citations.each do |fact| %>
             <li>
-              <strong>Fact:</strong> <%= link_to fact.summary, fact %>
+              <strong>Fact:</strong> <%= link_to fact.title, fact %>
             </li>
         <% end %>
       </ul>

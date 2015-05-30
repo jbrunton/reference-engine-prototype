@@ -28,12 +28,12 @@ ActiveRecord::Schema.define(version: 20150524134812) do
   end
 
   create_table "facts", force: :cascade do |t|
-    t.text     "summary"
-    t.text     "content"
-    t.string   "references_string"
-    t.string   "categories_string"
+    t.string   "title"
+    t.string   "content"
     t.string   "version_description"
     t.integer  "version_number"
+    t.string   "references_string"
+    t.string   "categories_string"
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
   end
@@ -44,13 +44,13 @@ ActiveRecord::Schema.define(version: 20150524134812) do
   end
 
   create_table "references", force: :cascade do |t|
-    t.string   "key"
     t.string   "title"
-    t.string   "author"
-    t.string   "url"
-    t.string   "summary"
+    t.string   "content"
     t.string   "version_description"
     t.integer  "version_number"
+    t.string   "key"
+    t.string   "author"
+    t.string   "url"
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
   end

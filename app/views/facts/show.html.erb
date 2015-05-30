@@ -7,18 +7,12 @@
       &middot;
       <%= link_to 'Edit', edit_fact_path(@fact) %>
       &middot;
-      <%= link_to 'Delete', @fact, method: :delete, data: {confirm: 'Are you sure?'} %>
+      <%= link_to 'Delete', @fact, method: :delete, data: { confirm: 'Are you sure?' } %>
     </div>
   </div>
   <div class="large-8 columns">
 
-    <div class="panel callout">
-      <h5>
-        <strong>Fact:</strong> <%= @fact.summary %>
-      </h5>
-    </div>
-
-    <%= markdownify(@fact.content) %>
+    <%= render 'facts/show' %>
 
     <h4>References</h4>
 
@@ -28,7 +22,7 @@
             <%= link_to reference.title, reference %>
             <%= link_to '[open]', reference.url, { class: 'external', target: '_blank' } %>
           </h5>
-          <%= reference.summary %>
+          <%= reference.title %>
         </div>
     <% end %>
 

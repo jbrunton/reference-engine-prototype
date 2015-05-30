@@ -61,6 +61,14 @@ class ReferencesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_reference
       @reference = Reference.find(params[:id])
+    rescue ActiveRecord::RecordNotFound
+      version = PaperTrail::Version.where(event: 'destroy', item_type: 'Reference', item_id: params[:id]).first
+      if version
+        version_link = view_context.link_to("here", version_path(version))
+        redirect_to root_url, notice: "Page was deleted. View the last version #{version_link}."
+      else
+        raise ActiveRecord::RecordNotFound if version.nil?
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
