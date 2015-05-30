@@ -17,7 +17,6 @@ Rails.application.routes.draw do
     end
   end
 
-  get 'browse/category/*category', to: 'browse#category'
   get 'categories/*category', to: 'categories#show'
 
   # The priority is based upon order of creation: first created -> highest priority.
