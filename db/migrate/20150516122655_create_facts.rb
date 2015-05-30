@@ -6,6 +6,7 @@ class CreateFacts < ActiveRecord::Migration
       t.string :references_string
       t.string :categories_string
       t.string :version_description
+      t.integer :version_number
 
       t.timestamps null: false
     end

@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 20150524134812) do
     t.string   "references_string"
     t.string   "categories_string"
     t.string   "version_description"
+    t.integer  "version_number"
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
   end
@@ -49,6 +50,7 @@ ActiveRecord::Schema.define(version: 20150524134812) do
     t.string   "url"
     t.string   "summary"
     t.string   "version_description"
+    t.integer  "version_number"
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
   end

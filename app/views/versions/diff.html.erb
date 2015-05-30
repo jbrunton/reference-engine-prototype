@@ -1,11 +1,11 @@
 <div class="row">
   <div class="large-12 columns">
     <p>
-      Diffing <%= link_to "v#{@version1.id}", version_path(@version1) %> with
+      Diffing <%= link_to "v#{@resource1.version_number}", version_path(@version1) %> with
       <% if @version2.nil? %>
         <%= link_to 'CURRENT', @resource2 %>.
       <% else %>
-        <%= link_to "v#{@version2.id}", version_path(@version2) %>.
+        <%= link_to "v#{@resource2.version_number}", version_path(@version2) %>.
       <% end %>
   </div>
   <div class="large-8 columns">
