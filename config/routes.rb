@@ -3,10 +3,10 @@ Rails.application.routes.draw do
 
   get 'about', to: 'home#about'
 
-  resources :facts do
+  resources :facts, except: [:index] do
     resources :versions, only: [:index]
   end
-  resources :references do
+  resources :references, except: [:index] do
     resources :versions, only: [:index]
   end
 

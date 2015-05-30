@@ -1,12 +1,6 @@
 class FactsController < ApplicationController
   before_action :set_fact, only: [:show, :edit, :update, :destroy, :versions, :restore_version]
 
-  # GET /facts
-  # GET /facts.json
-  def index
-    @facts = Fact.all
-  end
-
   # GET /facts/1
   # GET /facts/1.json
   def show
@@ -58,7 +52,7 @@ class FactsController < ApplicationController
   def destroy
     @fact.destroy
     respond_to do |format|
-      format.html { redirect_to facts_url, notice: 'Fact was successfully destroyed.' }
+      format.html { redirect_to root_url, notice: 'Fact was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

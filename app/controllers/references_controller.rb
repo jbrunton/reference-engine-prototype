@@ -1,12 +1,6 @@
 class ReferencesController < ApplicationController
   before_action :set_reference, only: [:show, :edit, :update, :destroy]
 
-  # GET /references
-  # GET /references.json
-  def index
-    @references = Reference.all
-  end
-
   # GET /references/1
   # GET /references/1.json
   def show
@@ -58,7 +52,7 @@ class ReferencesController < ApplicationController
   def destroy
     @reference.destroy
     respond_to do |format|
-      format.html { redirect_to references_url, notice: 'Reference was successfully destroyed.' }
+      format.html { redirect_to root_url, notice: 'Reference was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

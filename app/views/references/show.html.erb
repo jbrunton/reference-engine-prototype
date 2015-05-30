@@ -6,6 +6,8 @@
       <%= link_to 'Versions', reference_versions_path(@reference) %>
       &middot;
       <%= link_to 'Edit', edit_reference_path(@reference) %>
+      &middot;
+      <%= link_to 'Delete', @fact, method: :delete, data: {confirm: 'Are you sure?'} %>
     </div>
   </div>
   <div class="large-8 columns">
