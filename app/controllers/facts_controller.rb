@@ -19,6 +19,7 @@ class FactsController < ApplicationController
 
   # GET /facts/1/edit
   def edit
+    @fact.version_description = nil
   end
 
   # POST /facts
