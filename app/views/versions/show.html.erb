@@ -1,6 +1,12 @@
 <div class="row">
   <div class="large-12 columns">
-    <p>Viewing version <%= @resource.version_number %>. View the latest version <%= link_to 'here', @resource %>.</p>
+    <p>Viewing version <%= @resource.version_number %>.
+      <% if @resource.new_record? %>
+          Resource deleted.
+      <% else %>
+          View the current version <%= link_to 'here', @resource %>.
+      <% end %>
+    </p>
   </div>
   <div class="large-8 columns">
     <% if @version.item_type == 'Fact' %>

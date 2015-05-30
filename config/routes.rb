@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root 'home#index'
 
   get 'about', to: 'home#about'
+  get 'trash', to: 'home#trash'
 
   resources :facts, except: [:index] do
     resources :versions, only: [:index]
