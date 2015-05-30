@@ -7,6 +7,7 @@ class Fact < ActiveRecord::Base
   has_and_belongs_to_many :categories
   has_and_belongs_to_many :references
 
+  before_save :set_version
   after_save :categorize
   after_save :reference
 
@@ -24,5 +25,9 @@ class Fact < ActiveRecord::Base
       references << Reference.find_by(key: reference_key)
     end
     self
+  end
+
+  def set_version
+    self.version_number = (self.version_number || 0) + 1
   end
 end

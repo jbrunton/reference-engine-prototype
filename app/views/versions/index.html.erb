@@ -48,11 +48,12 @@
         <td><%= link_to 'View', @resource %></td>
       </tr>
       <% @versions.each do |v| %>
+          <% reified_version = v.reify %>
           <tr>
             <td><input type="checkbox" name="version" value="<%= v.id %>" /></td>
-            <td>v<%= v.id %></td>
+            <td>v<%= reified_version.version_number %></td>
             <td><%= format_time v.created_at %></td>
-            <td><%= v.reify.version_description %></td>
+            <td><%= reified_version.version_description %></td>
             <td><%= link_to 'View', version_path(v) %></td>
           </tr>
       <% end %>
